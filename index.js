@@ -20,39 +20,6 @@ function processFirstItem(stringList, callback) {
 
 // ⭐️ Example Challenge END ⭐️
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 ///// M V P ///////
 
 /* Task 1: `counterMaker`
@@ -82,39 +49,6 @@ let count = 0;
 function counter2() {
   return count++;
 }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* Task 2: inning() 
 
@@ -148,7 +82,7 @@ function finalScore(numInnings) {
   let awayScore = 0;
   for (let i = 0; i < numInnings; i++) {
     homeScore = homeScore + inning();
-    awayScore = homeScore + inning();
+    awayScore = awayScore + inning();
   }
   endGame.Home = homeScore;
   endGame.Away = awayScore;
@@ -158,39 +92,6 @@ function finalScore(numInnings) {
 let theScore = finalScore(9);
 
 console.log(theScore);
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* Task 4: 
 
@@ -212,6 +113,33 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(numInnings) {
+  let newScoreBoard = [];
+  newScoreBoard[0] = { Name: "1st inning", Score: "" };
+  newScoreBoard[1] = { Name: "2nd inning", Score: "" };
+  newScoreBoard[2] = { Name: "3rd inning", Score: "" };
+  newScoreBoard[3] = { Name: "4th inning", Score: "" };
+  newScoreBoard[4] = { Name: "5th inning", Score: "" };
+  newScoreBoard[5] = { Name: "6th inning", Score: "" };
+  newScoreBoard[6] = { Name: "7th inning", Score: "" };
+  newScoreBoard[7] = { Name: "8th inning", Score: "" };
+  newScoreBoard[8] = { Name: "9th inning", Score: "" };
+  newScoreBoard[9] = { Name: "Final Score", awayScore: 0, homeScore: 0 };
+
+  function getInningScore(a, h) {
+    let away = inning();
+    let home = inning();
+    newScoreBoard[9].awayScore = newScoreBoard[9].awayScore + away;
+    newScoreBoard[9].homeScore = newScoreBoard[9].homeScore + home;
+    return `awayTeam ${away} - homeTeam ${home}`;
+  }
+
+  for (let i = 0; i < numInnings; i++) {
+    newScoreBoard[i].Score = getInningScore();
+  }
+  return newScoreBoard;
 }
+
+let allInnings = scoreboard(6);
+
+console.log(allInnings);
