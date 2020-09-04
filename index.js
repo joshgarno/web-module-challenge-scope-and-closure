@@ -128,39 +128,6 @@ let newInningScore = inning();
 
 console.log(newInningScore);
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -175,9 +142,22 @@ finalScore(inning, 9) might return:
 
 */
 
-function finalScore(/*code Here*/) {
-  /*Code Here*/
+function finalScore(numInnings) {
+  let endGame = { Home: 0, Away: 0 };
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < numInnings; i++) {
+    homeScore = homeScore + inning();
+    awayScore = homeScore + inning();
+  }
+  endGame.Home = homeScore;
+  endGame.Away = awayScore;
+  return endGame;
 }
+
+let theScore = finalScore(9);
+
+console.log(theScore);
 
 //
 //
