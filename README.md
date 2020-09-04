@@ -64,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+A. The name being taken from the name being passed into the first level of the function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+A. Name being passed is the same. The newRoll number could change.
 c. What is the lexical scope of `newRoll`?
+A. Functional.
 
 ### Task 2c - Exit Ticket
 
@@ -109,6 +112,6 @@ addSix(21); // returns 27
 
 Follow these steps for completing your project.
 
-- [ ] Submit a pull request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your Team Lead as a reviewer on the pull request
-- [ ] Your Team Lead will count the project as complete by merging the branch back into master
+- [x] Submit a pull request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [x] Add your Team Lead as a reviewer on the pull request
+- [x] Your Team Lead will count the project as complete by merging the branch back into master
